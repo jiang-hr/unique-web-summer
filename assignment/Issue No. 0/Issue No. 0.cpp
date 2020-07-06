@@ -4,9 +4,17 @@
 //
 
 #include <iostream>
+#include <vector>
+#include "stack.hpp"
+#include "priority_queue.hpp"
+#include "sort.hpp"
+#include "traversal.hpp"
+
+#define _STD ::std::
+using namespace hanry;
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    stack_test();
 }
 

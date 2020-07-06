@@ -1,20 +1,28 @@
 # unique-web-summer
 unique web summer 2020
 
-
-
-#### Issue No. 0
-
-Issue No. 0 is divided into 3 parts, Linux, git and data structure and algorithm learning.
-
-I spent a day and a half studying on it, and the content below is a hyperlink to specific content.
-
-##### Linux command
-
-> [Linux command Learning](daily_report\Issue No. 0\Linux\Linux 命令学习.md)
+本文档旨在记录unique studio的学习过程。
 
 
 
-##### git command 
+## 目录
 
-> [git command Learning](daily_report\Issue No. 0\Git\Git 命令学习.md)
+* [Issue No. 0](./daily_report/Issue%20No.%200/20_07_06.md)
+  * [Linux command Learning](./daily_report/Issue%20No.%200/Linux/Linux%20命令学习.md)
+  * [git command Learning](./daily_report/Issue%20No.%200/Git/git%20命令学习.md)
+  * [Data structure]()
+
+* [Issue No. 1]()
+  * `null`
+
+
+
+### Daily report
+
+:link: [2020 / 07 / 06](daily_report/Issue%20No.%200/20_07_06.md)
+
+:link: [2020 / 07 / 07]()
+
+:link: [2020 / 07 / 08]()
+
+:link: [2020 / 07 / 09]()

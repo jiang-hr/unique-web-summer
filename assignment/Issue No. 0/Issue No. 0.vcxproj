@@ -141,6 +141,12 @@
   <ItemGroup>
     <ClCompile Include="Issue No. 0.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="priority_queue.hpp" />
+    <ClInclude Include="sort.hpp" />
+    <ClInclude Include="stack.hpp" />
+    <ClInclude Include="traversal.hpp" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
