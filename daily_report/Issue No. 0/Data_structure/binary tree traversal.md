@@ -4,19 +4,19 @@
 
 #### [144. 二叉树的前序遍历](https://leetcode-cn.com/problems/binary-tree-preorder-traversal/)
 
-![preorderTraversal](https://raw.githubusercontent.com/jiang-hr/unique-web-summer/daily_report/Issue%20No.%200/Data_structure/preorderTraversal.png)
+![https://raw.githubusercontent.com/jiang-hr/unique-web-summer/master/daily_report/Issue%20No.%200/Data_structure/inorderTraversal.png](https://raw.githubusercontent.com/jiang-hr/unique-web-summer/master/daily_report/Issue No. 0/Data_structure/inorderTraversal.png)
 
 
 
 #### [94. 二叉树的中序遍历](https://leetcode-cn.com/problems/binary-tree-inorder-traversal/)
 
-![inorderTraversal](https://raw.githubusercontent.com/jiang-hr/unique-web-summer/daily_report/Issue%20No.%200/Data_structure/inorderTraversal.png)
+![https://raw.githubusercontent.com/jiang-hr/unique-web-summer/master/daily_report/Issue%20No.%200/Data_structure/preorderTraversal.png](https://raw.githubusercontent.com/jiang-hr/unique-web-summer/master/daily_report/Issue No. 0/Data_structure/preorderTraversal.png)
 
 
 
 #### [145. 二叉树的后序遍历](https://leetcode-cn.com/problems/binary-tree-postorder-traversal/)
 
-![postorderTraversal](https://raw.githubusercontent.com/jiang-hr/unique-web-summer/daily_report/Issue%20No.%200/Data_structure/postorderTraversal.png)
+![https://raw.githubusercontent.com/jiang-hr/unique-web-summer/master/daily_report/Issue%20No.%200/Data_structure/postorderTraversal.png](https://raw.githubusercontent.com/jiang-hr/unique-web-summer/master/daily_report/Issue No. 0/Data_structure/postorderTraversal.png)
 
 
 
