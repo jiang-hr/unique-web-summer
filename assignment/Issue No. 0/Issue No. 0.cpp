@@ -16,6 +16,7 @@ using namespace hanry;
 int main()
 {
     sort_test();
-    //stack_test();
+    stack_test();
+    traversal_test();
 }
 

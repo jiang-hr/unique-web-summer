@@ -83,19 +83,19 @@ void mergeSort(_Container& _Array) {
 // 3. 快速排序 C++ 实现
 
 template <class _Container>
-void quickSort(_Container& arr, int low, int high) {
-	if (high <= low) return;
-	int i = low, j = high + 1;
-	typename _Container::value_type key = arr[low];
+void quickSort(_Container& _Array, int _Left, int _Right) {
+	if (_Right <= _Left) return;
+	int i = _Left, j = _Right + 1;
+	typename _Container::value_type key = _Array[_Left];
 	for (;;) {
-		while (arr[++i] < key)if (i == high)break;
-		while (arr[--j] > key)if (j == low)break;
+		while (_Array[++i] < key)if (i == _Right)break;
+		while (_Array[--j] > key)if (j == _Left)break;
 		if (i >= j) break;
-		_STD swap(arr[i], arr[j]);
+		_STD swap(_Array[i], _Array[j]);
 	}
-	_STD swap(arr[low], arr[j]);
-	quickSort(arr, low, j - 1);
-	quickSort(arr, j + 1, high);
+	_STD swap(_Array[_Left], _Array[j]);
+	quickSort(_Array, _Left, j - 1);
+	quickSort(_Array, j + 1, _Right);
 }
 
 
@@ -174,5 +174,5 @@ void sort_test() {
 	for (auto x : b) {
 		_STD cout << x << ' ';
 	}
-
+	_STD cout << "\n排序算法测试结束" << _STD endl;
 }
