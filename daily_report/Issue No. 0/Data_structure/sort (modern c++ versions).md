@@ -1,25 +1,9 @@
-﻿
-/*
- * @author: hanry
- * @time: 2020/7/6
- * 本程序遵循GPL协议。
- * 本程序纪录5种排序算法。
- * 分别是
- *    冒泡排序
- *    插⼊排序
- *    归并排序
- *    快速排序
- *    堆排序
- *
- */
+## 排序算法（c++版本）
 
-#pragma once
-#include <functional>
-#include <vector>
-#define _STD ::std::
+#### 冒泡排序
 
-
- // 1. 冒泡排序 C++ 实现。
+```cpp
+// 1. 冒泡排序 C++ 实现。
 template <class _RanIt, class _Pr = _STD less<void>>
 void bubbleSort(const _RanIt _First, const _RanIt _Last, _Pr cmp = _STD less<>()) {
 	for (auto iter1 = _First; iter1 != _Last; ++iter1)
@@ -27,7 +11,19 @@ void bubbleSort(const _RanIt _First, const _RanIt _Last, _Pr cmp = _STD less<>()
 			if (cmp(*iter1, *iter2))
 				_STD swap(*iter1, *iter2);
 }
+```
 
+
+
+|          | 平均时间 | 最好时间 | 最坏时间 |
+| :------: | -------- | -------- | -------- |
+| 冒泡排序 | O(n^2)   | O(n)     | O(n^2)   |
+
+
+
+#### 插入排序
+
+```cpp
 // 2. 插入排序 C++ 实现。
 template <class _RanIt, class _Pr = _STD less<void>>
 void insertSort(const _RanIt _First, const _RanIt _Last, _Pr cmp = _STD less<>()) {
@@ -45,11 +41,20 @@ void insertSort(const _RanIt _First, const _RanIt _Last, _Pr cmp = _STD less<>()
 			*_First = temp;
 	}
 }
+```
 
 
 
-// 3. 归并排序 C++ 实现
 
+|          | 平均时间 | 最好时间 | 最坏时间 |
+| :------: | -------- | -------- | -------- |
+| 插入排序 | O(n^2)   | O(n)     | O(n^2)   |
+
+
+
+#### 归并排序
+
+```cpp
 template <class _Ty, class _Container = _STD vector<_Ty>, class _Pr = _STD less<typename _Container::value_type>>
 void merge(_Container& _Array, int _Left, int _Mid, int _Right, _Container& temp, _Pr cmp = _STD less<typename _Container::value_type>{}) {
 	int i = _Left, j = _Mid + 1, t = 0;
@@ -78,8 +83,19 @@ void mergeSort(_Container& _Array) {
 	_Container temp = _Array;
 	_merge_sort_t<typename _Container::value_type>(_Array, 0, _Array.size() - 1, temp);
 }
+```
 
 
+
+|          | 平均时间 | 最好时间 | 最坏时间 |
+| :------: | -------- | -------- | -------- |
+| 归并排序 | O(nlogn) | O(nlogn) | O(nlogn) |
+
+
+
+#### 快速排序
+
+```cpp
 // 3. 快速排序 C++ 实现
 
 template <class _Container>
@@ -97,11 +113,20 @@ void quickSort(_Container& arr, int low, int high) {
 	quickSort(arr, low, j - 1);
 	quickSort(arr, j + 1, high);
 }
+```
 
 
 
-// 4. 堆排序 C++ 实现
 
+|          | 平均时间 | 最好时间 | 最坏时间 |
+| :------: | -------- | -------- | -------- |
+| 快速排序 | O(nlogn) | O(nlogn) | O(n^2)   |
+
+
+
+#### 堆排序
+
+```cpp
 template <class _Container, class _Pr = _STD less<typename _Container::value_type>>
 void __heap_sort_t(_Container& _Array, int i, int _Length, _Pr cmp = _Pr{})
 {
@@ -128,51 +153,13 @@ void heapSort(_Container& _Array)
 		}
 	}
 }
+```
 
 
 
 
-#include <cstdlib>
-#include <stack>
-void sort_test() {
-	_STD cout << "排序算法测试开始" << _STD endl;
-	_STD vector<int> a{ 7,6,5,4,3,2,1,0 };
-	for (int i = 0; i < 300; i++) {
-		a.push_back(rand());
-	}
-	_STD cout << "原始数据为" << _STD endl;
-	for (auto x : a) {
-		_STD cout << x << ' ';
-	}
-	_STD vector<int> b(a);
-	_STD cout << "\n冒泡排序准确度测试" << _STD endl;
-	bubbleSort(b.begin(), b.end());
-	for (auto x : b) {
-		_STD cout << x << ' ';
-	}
-	b = a;
-	_STD cout << "\n插入排序准确度测试" << _STD endl;
-	insertSort(b.begin(), b.end());
-	for (auto x : b) {
-		_STD cout << x << ' ';
-	}
-	_STD cout << "\n并归排序准确度测试" << _STD endl;
-	b = a;
-	mergeSort(b);
-	for (auto x : b) {
-		_STD cout << x << ' ';
-	}
-	b = a;
-	_STD cout << "\n快速排序准确度测试" << _STD endl;
-	quickSort(b, 0, b.size() - 1);
-	for (auto x : b) {
-		_STD cout << x << ' ';
-	}
-	b = a;
-	_STD cout << "\n堆排序准确度测试" << _STD endl;
-	heapSort(b);
-	for (auto x : b) {
-		_STD cout << x << ' ';
-	}
+|        | 平均时间 | 最好时间 | 最坏时间 |
+| :----: | -------- | -------- | -------- |
+| 堆排序 | O(nlogn) | O(nlogn) | O(nlogn) |
 
-}
+

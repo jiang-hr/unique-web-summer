@@ -5,8 +5,8 @@
 
 #include <iostream>
 #include <vector>
+#include <algorithm>
 #include "stack.hpp"
-#include "priority_queue.hpp"
 #include "sort.hpp"
 #include "traversal.hpp"
 
@@ -15,6 +15,7 @@ using namespace hanry;
 
 int main()
 {
-    stack_test();
+    sort_test();
+    //stack_test();
 }
 

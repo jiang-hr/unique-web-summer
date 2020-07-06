@@ -23,9 +23,6 @@
     <ClInclude Include="stack.hpp">
       <Filter>源文件</Filter>
     </ClInclude>
-    <ClInclude Include="priority_queue.hpp">
-      <Filter>源文件</Filter>
-    </ClInclude>
     <ClInclude Include="sort.hpp">
       <Filter>源文件</Filter>
     </ClInclude>
