@@ -28,7 +28,7 @@
 
 代码如下：
 
-
+### 类的定义
 
 ```cpp
 template <class _Ty, class _Container = _STD vector<_Ty>>
@@ -51,8 +51,10 @@ public:
     
     ~binary_tree() = default;
 }
-// 所有代码均为 binary_tree 当中的类。
+// 所有代码均为 binary_tree 当中类的内容。
 ```
+
+
 
 
 
