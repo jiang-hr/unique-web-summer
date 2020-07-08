@@ -13,6 +13,7 @@ The purpose of this document is to keep a record of the learning process of uniq
   * Data structure
     * [sort (modern c++ versions)](/daily_report/Issue%20No.%200/Data_structure/sort%20(modern%20c%2B%2B%20versions).md)
     * [stack](.\assignment\Issue%20No.%200\stack.hpp)
+    * [stack](./assignment/Issue%20No.%200/stack.hpp)
     * [binary tree traversal](./daily_report/Issue%20No.%200/Data_structure/binary%20tree%20traversal.md)
   
 * [Issue No. 1](daily_report/Issue%20No.%201/20_07_08.md)
