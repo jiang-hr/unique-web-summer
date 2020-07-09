@@ -1,17 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="img/icon/icon-180x180.png" sizes="120x120" />
-    <!-- 通用控件，所有页面均有，来自github开源项目 https://github.com/necolas/normalize.css -->
-    <link href="./style/normalize.css" rel="stylesheet" type="text/css">
     <link href="./style/head.css" rel="stylesheet" type="text/css">
-    <title>Rockstar Games (假的)</title>
+    <title>Rockstar Games</title>
 </head>
+
 <body>
-    <div class="head_right" style="width: 100px; height: 100px;"></div>
-    <noscript> 滚 </noscript>
-    
+    <!-- 第一部分：头部 -->
+    <div class="header">
+        <div class="header-inner">
+            <div class="head-left">
+                <a class="active" href="/">
+                    <span class="head-left-span-1"></span>
+                    <span class="head-left-span-2"></span>
+                    <span class="head-left-span-3"></span>
+                </a>
+            </div>
+            <a href="/">
+                <div class="head-center"></div>
+            </a>
+            <div class="head-right"></div>
+        </div>
+    </div>
+
+    <!-- 第二部分：滚动海报 -->
+    <div id="sectionPoster">
+        <div class="poster-1" id="poster1"></div>
+        <div class="poster-2" id="poster2"></div>
+        <div class="poster-3" id="poster3"></div>
+    </div>
+    <div id="posterDescription">
+        <div class="poster-left" id="posterLeft"></div>
+        <div class="poster-button" id="posterButton"></div>
+    </div>
+    <div style="height: 17px;"></div>
+    <div class="button-hold">
+        <button class="inner-button" type="button"></button>
+        <button class="inner-button" type="button"></button>
+        <button class="inner-button" type="button"></button>
+    </div>
+
+    <!-- 第三部分：Newswire -->
+    <section id="newswire" style="display: block;">
+        <h2>Newswire</h2>
+        <!-- grid 布局开始 -->
+        <div class="grid-newswire">
+            <a class="content-image" href="/newswire/article/61621/Celebrate-Independence-Day-in-GTA-Online">
+
+                <div class="content-image-top" id="contentImageTop1"
+                    style='background-image: url("https://media.rockstargames.com/rockstargames-newsite/uploads/0cdf7f738e50c208b3cfc30e1b7e4e0a52a0bc2f.jpg");'>
+                </div>
+
+                <div class="content-image-down">
+                    <h5>Celebrate Independence Day in GTA Online</h5>
+                    <div class="content-image-down-left"><i></i>GTA Online</div><time>July 2, 2020</time>
+                </div>
+            </a>
+
+            <a class="content-image" href="/">
+
+                <div class="content-image-top" id="contentImageTop2" style='background-image: url("https://media.rockstargames.com/rockstargames-newsite/uploads/be48b8f4e32d0677204ef651134dedeb1991235a.jpg");'>
+                </div>
+
+                <div class="content-image-down">
+                    <h5>A Land of Opportunities Bonus</h5>
+                    <div class="content-image-down-left"><i></i>Red Dead Online</div><time>July 7, 2020</time>
+                </div>
+            </a>
+
+            <a class="content-image" href="/">
+
+                <div class="content-image-top" id="contentImageTop3" style='background-image: url("https://media.rockstargames.com/rockstargames-newsite/uploads/bef136d032aebd10781d472c2bc8129603b218d1.jpg");'>
+                </div>
+
+                <div class="content-image-down">
+                    <h5>Grand Theft Auto V Coming to New Generation Consoles in 2021</h5>
+                    <div class="content-image-down-left"><i></i>Grand Theft Auto V</div><time>June 11, 2020</time>
+                </div>
+            </a>
+
+            <a class="content-image" href="/">
+
+                <div class="content-image-top" id="contentImageTop4" style='background-image: url("https://media.rockstargames.com/rockstargames-newsite/uploads/3fb643b5db929a1358a651dfe01663986da91447.jpg");'>
+                </div>
+
+                <div class="content-image-down">
+                    <h5>Gerald's Last Play</h5>
+                    <div class="content-image-down-left"><i></i>GTA Online</div><time>April 23, 2020</time>
+                </div>
+            </a>
+
+            <a class="content-image" href="/">
+
+                <div class="content-image-top" id="contentImageTop5" style='background-image: url("https://media.rockstargames.com/broadcast/20200518/marston-2.jpg");'>
+                </div>
+
+                <div class="content-image-down">
+                    <h5>Celebrating a Decade of Red Dead Redemption</h5>
+                    <div class="content-image-down-left"><i></i>Red Dead Redemption</div><time>May 18, 2020</time>
+                </div>
+            </a>
+
+            <a class="content-image" href="/">
+
+                <div class="content-image-top" id="contentImageTop6" style='background-image: url("https://media.rockstargames.com/rockstargames-newsite/uploads/2b27c2d2cf4f97f51eaa122f4a7a4bc344b2e788.png");'>
+                </div>
+
+                <div class="content-image-down">
+                    <h5>Rockstar Games and COVID-19 Relief</h5>
+                    <div class="content-image-down-left"><i></i>Rockstar Games</div><time>March 31, 2020</time>
+                </div>
+            </a>
+
+        </div>
+        <a class="view-more" href="/newswire">View More</a>
+
+        <!-- 第四部分：FEATURED GAMES -->
+        <h2>FEATURED GAMES</h2>
+        <div>
+
+        </div>
+        <a class="view-more" href="/games">View More</a>
+    </section>
+
+
+
+    <script src="./js/head.js"></script>
 </body>
+
 </html>
