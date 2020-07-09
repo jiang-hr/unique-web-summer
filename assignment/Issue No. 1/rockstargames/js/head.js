@@ -9,6 +9,8 @@ function $$(Nid) {
 // 获取dom树节点。
 var sectionPoster = $("sectionPoster");
 var posterDescription = $("posterDescription");
+var posterLeft = $("posterLeft");
+var posterButton = $("posterButton");
 var newswire = $("newswire");
 var posterLeft = $("posterLeft");
 var posterButton = $("posterButton");
@@ -20,6 +22,14 @@ var contentImageTop4 = $("contentImageTop4");
 var contentImageTop5 = $("contentImageTop5");
 var contentImageTop6 = $("contentImageTop6");
 var gap = 33.2;
+
+var poster1 = $("poster1");
+var poster2 = $("poster2");
+var poster3 = $("poster3");
+
+poster1.style.backgroundImage = 'url("https://videos-rockstargames-com.akamaized.net/screencaps/12142/_global/layers/0.jpg")';
+poster2.style.backgroundImage = 'url("https://videos-rockstargames-com.akamaized.net/screencaps/12142/_global/layers/1.png")';
+poster3.style.backgroundImage = 'url("https://videos-rockstargames-com.akamaized.net/screencaps/12142/_global/layers/2.png")';
 
 // 响应式计算中。。。
 
@@ -37,12 +47,16 @@ function calSectionPosterHeight() {
     return ((window.innerWidth > 1420) ? 798.75 : (window.innerWidth / 16 * 9)).toString() + 'px';
 }
 
+function resizePoster(Element) {
+    Element.style.marginLeft = calMarginLeftAndRight();
+    Element.style.marginRight = calMarginLeftAndRight();
+    Element.style.marginTop = '60px';
+    Element.style.height = calSectionPosterHeight();
+    Element.style.width = calWidth();
+}
+
 function resizeSectionPoster() {
-    sectionPoster.style.marginLeft = calMarginLeftAndRight();
-    sectionPoster.style.marginRight = calMarginLeftAndRight();
-    sectionPoster.style.marginTop = '60px';
-    sectionPoster.style.height = calSectionPosterHeight();
-    sectionPoster.style.width = calWidth();
+    resizePoster(sectionPoster);
 }
 resizeSectionPoster();
 
@@ -62,8 +76,8 @@ resizePosterDescription();
 function resizeNewswire() {
     newswire.style.marginLeft = ((window.innerWidth > 1486.4) ? (window.innerWidth - 1420 - 2 * gap) / 2 : 0).toString() + 'px';
     newswire.style.marginRight = ((window.innerWidth > 1486.4) ? (window.innerWidth - 1420 - 2 * gap) / 2 : 0).toString() + 'px';
-    newswire.style.paddingLeft = '33.2px';
-    newswire.style.paddingRight = '33.2px';
+    newswire.style.paddingLeft = gap + 'px';
+    newswire.style.paddingRight = gap + 'px';
 }
 resizeNewswire();
 
@@ -92,6 +106,37 @@ function resizeContentImageTop6() {
 }
 
 
+function resizeMainPoster() {
+    poster1.style.width = calWidth();
+    poster1.style.height = calSectionPosterHeight();
+    poster2.style.width = calWidth();
+    poster2.style.height = calSectionPosterHeight();
+    poster3.style.width = calWidth();
+    poster3.style.height = calSectionPosterHeight();
+}
+resizeMainPoster();
+
+function resizePosterLeft() {
+    posterLeft.style.width = ((window.innerWidth > 1420 ? 1420 : window.innerWidth) - 184.55).toString() + 'px';
+}
+
+function resizePosterButton() {
+    posterButton.style.marginLeft = ((window.innerWidth > 1420 ? 1420 : window.innerWidth) - 184.55).toString() + 'px';
+    posterButton.style.height = calPosterDescriptionHeight();
+    posterButton.style.padding = (28 - (window.innerWidth > 1420 ? 0 : 1420 - window.innerWidth) / 50) / 2 + 'px 24px';
+}
+resizePosterButton();
+
+var gridFeatureSpan = $$("grid-feature-span");
+
+function resizeGridFeatureSpan() {
+    for (let x = 0; x < 4; x++) {
+        gridFeatureSpan[x].style.height = (((window.innerWidth > 1420 ? 1420 : window.innerWidth) - 3 * gap) / 256 * 79).toString() + 'px';
+    }
+}
+resizeGridFeatureSpan();
+
+
 function resizeGridHeight() {
     resizeContentImageTop1();
     resizeContentImageTop2();
@@ -108,9 +153,34 @@ window.onresize = function () {
     resizePosterDescription();
     resizeNewswire();
     resizeGridHeight();
+    resizeMainPoster();
+    resizePosterLeft();
+    resizePosterButton();
+    resizeGridFeatureSpan();
 };
 
 
 // 临时渲染，请及时删除。
-sectionPoster.style.backgroundColor = 'pink';
-posterDescription.style.backgroundColor = 'yellow';
+// sectionPoster.style.backgroundColor = 'pink';
+posterDescription.style.backgroundColor = 'black';
+
+
+posterLeft.innerHTML = "Grand Theft Auto V: PlayStation 5 Announcement Trailer";
+
+
+/*
+ * 开始写按下 3 个button的结果。
+ */
+
+var button = [$("button0"), $("button1"), $("button2")];
+button[0].style.backgroundColor = "#fcaf17";
+button[1].style.backgroundColor = "#000000";
+button[2].style.backgroundColor = "#000000";
+
+function clickButton(num) {
+    button.forEach(element => {
+        element.style.backgroundColor = "#000000";
+    });
+    button[num].style.backgroundColor = "#fcaf17";
+}
+

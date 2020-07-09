@@ -28,20 +28,29 @@
     </div>
 
     <!-- 第二部分：滚动海报 -->
+
     <div id="sectionPoster">
-        <div class="poster-1" id="poster1"></div>
-        <div class="poster-2" id="poster2"></div>
-        <div class="poster-3" id="poster3"></div>
+        <a href="https://www.rockstargames.com/videos/video/12142">
+            <div class="poster-1" id="poster1"></div>
+            <div class="poster-2" id="poster2"></div>
+            <div class="poster-3" id="poster3"></div>
+        </a>
     </div>
-    <div id="posterDescription">
-        <div class="poster-left" id="posterLeft"></div>
-        <div class="poster-button" id="posterButton"></div>
+    <a href="https://www.rockstargames.com/videos/video/12142">
+        <div id="posterDescription">
+            <div class="poster-left" id="posterLeft"></div>
+            <div class="poster-button" id="posterButton">Watch Now</div>
+        </div>
+    </a>
+
+
+    <div style="height: 17px;">
     </div>
-    <div style="height: 17px;"></div>
+
     <div class="button-hold">
-        <button class="inner-button" type="button"></button>
-        <button class="inner-button" type="button"></button>
-        <button class="inner-button" type="button"></button>
+        <button class="inner-button" type="button" id="button0" onclick="clickButton(0)"></button>
+        <button class="inner-button" type="button" id="button1" onclick="clickButton(1)"></button>
+        <button class="inner-button" type="button" id="button2" onclick="clickButton(2)"></button>
     </div>
 
     <!-- 第三部分：Newswire -->
@@ -63,7 +72,8 @@
 
             <a class="content-image" href="/">
 
-                <div class="content-image-top" id="contentImageTop2" style='background-image: url("https://media.rockstargames.com/rockstargames-newsite/uploads/be48b8f4e32d0677204ef651134dedeb1991235a.jpg");'>
+                <div class="content-image-top" id="contentImageTop2"
+                    style='background-image: url("https://media.rockstargames.com/rockstargames-newsite/uploads/be48b8f4e32d0677204ef651134dedeb1991235a.jpg");'>
                 </div>
 
                 <div class="content-image-down">
@@ -74,7 +84,8 @@
 
             <a class="content-image" href="/">
 
-                <div class="content-image-top" id="contentImageTop3" style='background-image: url("https://media.rockstargames.com/rockstargames-newsite/uploads/bef136d032aebd10781d472c2bc8129603b218d1.jpg");'>
+                <div class="content-image-top" id="contentImageTop3"
+                    style='background-image: url("https://media.rockstargames.com/rockstargames-newsite/uploads/bef136d032aebd10781d472c2bc8129603b218d1.jpg");'>
                 </div>
 
                 <div class="content-image-down">
@@ -85,7 +96,8 @@
 
             <a class="content-image" href="/">
 
-                <div class="content-image-top" id="contentImageTop4" style='background-image: url("https://media.rockstargames.com/rockstargames-newsite/uploads/3fb643b5db929a1358a651dfe01663986da91447.jpg");'>
+                <div class="content-image-top" id="contentImageTop4"
+                    style='background-image: url("https://media.rockstargames.com/rockstargames-newsite/uploads/3fb643b5db929a1358a651dfe01663986da91447.jpg");'>
                 </div>
 
                 <div class="content-image-down">
@@ -96,7 +108,8 @@
 
             <a class="content-image" href="/">
 
-                <div class="content-image-top" id="contentImageTop5" style='background-image: url("https://media.rockstargames.com/broadcast/20200518/marston-2.jpg");'>
+                <div class="content-image-top" id="contentImageTop5"
+                    style='background-image: url("https://media.rockstargames.com/broadcast/20200518/marston-2.jpg");'>
                 </div>
 
                 <div class="content-image-down">
@@ -107,7 +120,8 @@
 
             <a class="content-image" href="/">
 
-                <div class="content-image-top" id="contentImageTop6" style='background-image: url("https://media.rockstargames.com/rockstargames-newsite/uploads/2b27c2d2cf4f97f51eaa122f4a7a4bc344b2e788.png");'>
+                <div class="content-image-top" id="contentImageTop6"
+                    style='background-image: url("https://media.rockstargames.com/rockstargames-newsite/uploads/2b27c2d2cf4f97f51eaa122f4a7a4bc344b2e788.png");'>
                 </div>
 
                 <div class="content-image-down">
@@ -117,17 +131,45 @@
             </a>
 
         </div>
-        <a class="view-more" href="/newswire">View More</a>
+        <div class="view-more-div">
+            <a class="view-more" href="/newswire">View More</a>
+        </div>
 
         <!-- 第四部分：FEATURED GAMES -->
         <h2>FEATURED GAMES</h2>
-        <div>
 
+        <div class="grid-feature">
+            <a class="grid-feature-span"
+                style="background-image: url('https://www.rockstargames.com/rockstar_games/games/img/fob/640/reddeadredemption2.jpg');"
+                href="/"></a>
+            <a class="grid-feature-span"
+                style="background-image: url(&quot;https://www.rockstargames.com/rockstar_games/games/img/fob/640/V.jpg&quot;);"
+                href="/"></a>
+            <a class="grid-feature-span"
+                style="background-image: url(&quot;https://www.rockstargames.com/rockstar_games/games/img/fob/640/lanoire.jpg&quot;);"
+                href="/"></a>
+            <a class="grid-feature-span"
+                style="background-image: url(&quot;https://www.rockstargames.com/rockstar_games/games/img/fob/640/bully.jpg&quot;);"
+                href="/"></a>
         </div>
-        <a class="view-more" href="/games">View More</a>
+
+        <div style="height: 33.2px;"></div>
+        <div class="view-more-div">
+            <a class="view-more" href="/games">View More</a>
+        </div>
     </section>
 
-
+    <!-- 第五部分：尾部 -->
+    <footer>
+        <div class="footer-left">Rockstar Games</div>
+        <div class="footer-center">
+            <span class="footer-span">New York</span>
+            <span class="footer-span">London</span>
+            <span class="footer-span">Paris</span>
+            <span class="footer-span">Bogota</span>
+        </div>
+        <div class="footer-right">MCMXCVIII</div>
+    </footer>
 
     <script src="./js/head.js"></script>
 </body>
