@@ -1,0 +1,221 @@
+
+.button-hold {
+    background: #ffffff;
+    display: flex;
+    justify-content: center;
+    height: 10px;
+    margin-bottom: 50px;
+}
+
+.inner-button {
+    border: none;
+    outline: none;
+    padding: 0;
+    background: #000;
+    transition: background .3s;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    margin: 0px 8px;
+}
+
+
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity: 0
+    }
+
+    to {
+        visibility: visible;
+        opacity: 1
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0
+    }
+
+    to {
+        visibility: visible;
+        opacity: 1
+    }
+}
+
+.poster {
+    position: absolute;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-size: contain;
+    visibility: visible;
+    opacity: 1 !important;
+}
+
+
+div[class^="poster"] {
+    position: absolute;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-size: contain;
+    visibility: visible;
+    opacity: 0;
+}
+
+.poster-1 {
+    animation: 0.8s linear 0s 1 normal forwards running fadeIn;
+}
+
+.poster-2 {
+    animation: 0.8s linear 0.8s 1 normal forwards running fadeIn;
+}
+
+.poster-3 {
+    animation: 0.8s linear 1.6s 1 normal forwards running fadeIn;
+}
+
+.poster-left {
+    display: inline-block;
+    margin-top: 15px;
+    padding-left: 30px;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1.2em;
+    line-height: 1.125em;
+    color: white !important;
+    opacity: 1 !important;
+}
+
+.poster-button {
+    display: inline-block;
+    text-transform: uppercase;
+    padding: 14px 24px;
+    width: 184.5px;
+    height: 51.7px;
+    background-color: #fcaf17 !important;
+    color: black !important;
+    font-weight: 700;
+    font-size: 1.2em;
+    line-height: 1.125em;
+    border-radius: 2px;
+    opacity: 1 !important;
+}
+
+.grid-newswire {
+    margin-bottom: 36px;
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    grid-column-gap: 33.2px;
+    grid-row-gap: 33.2px;
+}
+
+.grid-newswire> :first-child {
+    grid-column: 1/-1;
+}
+
+.grid-newswire> :nth-child(2),
+.grid-newswire> :nth-child(3) {
+    grid-column: span 3;
+}
+
+.grid-newswire> :nth-child(n+4) {
+    grid-column: span 2;
+}
+
+.content-image {
+    border: 1px solid rgba(0, 0, 0, .15);
+    box-shadow: 3px 3px 6px 0 rgba(0, 0, 0, .2);
+    transition: color .3s;
+    overflow: hidden;
+    display: flex;
+    flex-flow: column;
+}
+
+
+.content-image-top {
+    content: "";
+    display: block;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+    overflow: hidden;
+}
+
+.content-image-down-left {
+    display: inline-block;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 1em;
+    color: black !important;
+    border: 1px solid #666;
+    border-radius: 16px;
+    padding: 4px 8px;
+    line-height: 1;
+    margin-right: 8px;
+}
+
+time {
+    font-size: 0.9em;
+    color: #646464;
+}
+
+
+.view-more-div {
+    text-align: center;
+}
+
+.view-more {
+    color: black !important;
+    position: relative;
+    background: transparent;
+    padding: 0;
+    z-index: 1;
+    outline: none;
+    text-transform: none;
+    font-weight: 400;
+    align-self: center;
+    display: inline-block;
+    border: none;
+    margin-bottom: 60px;
+}
+
+.view-more::before {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: -2px;
+    width: 100%;
+    height: 4px;
+    background: #fcaf17;
+    left: 0;
+    transition: height .2s;
+    z-index: -10000;
+}
+
+.view-more:hover::before {
+    height: 100%;
+}
+
+.grid-feature {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    width: 100%;
+    display: grid;
+    grid-row-gap: 33.2px;
+    grid-column-gap: 33.2px;
+}
+
+.grid-feature>a {
+    content: "";
+    height: 0;
+    display: block;
+    border: 1px solid rgba(0, 0, 0, .15);
+    box-shadow: 3px 3px 6px 0 rgba(0, 0, 0, .2);
+    background-size: cover;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    position: relative;
+    text-decoration: none;
+    /* height: 200px; */
+}
+

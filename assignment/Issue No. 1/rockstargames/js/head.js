@@ -1,11 +1,3 @@
-function $(Nid) {
-    return document.getElementById(Nid);
-}
-
-function $$(Nid) {
-    return document.getElementsByClassName(Nid);
-}
-
 // 获取dom树节点。
 var sectionPoster = $("sectionPoster");
 var posterDescription = $("posterDescription");
@@ -36,14 +28,6 @@ var navFooter = $("navFooter");
 
 // 响应式计算中。。。
 
-// 通用响应式
-function calMarginLeftAndRight() {
-    return ((document.body.clientWidth > 1420) ? (document.body.clientWidth - 1420) / 2 : 0).toString() + 'px';
-}
-
-function calWidth() {
-    return (document.body.clientWidth > 1420 ? 1420 : document.body.clientWidth) + 'px';
-}
 
 // SectionPoster 计算。
 function calSectionPosterHeight() {
@@ -244,51 +228,11 @@ var content = {
     }
 };
 
-
 poster1.style.backgroundImage = content[0].poster1;
 poster2.style.backgroundImage = content[0].poster2;
 poster3.style.backgroundImage = content[0].poster3;
 
 var end = false;
-
-function abs(num) {
-    return num > 0 ? num : -num;
-}
-
-function moveElement(elementID, final_x, final_y, interval) {
-    const speed = 100;
-    var elem = document.getElementById(elementID);
-    var xpos = parseInt(elem.style.left);
-    var ypos = parseInt(elem.style.top);
-    if (xpos == final_x && ypos == final_y) {
-        end = true;
-        return;
-    }
-    if (abs(xpos - final_x) <= speed) {
-        xpos = final_x;
-    }
-    if (abs(ypos - final_y) <= speed) {
-        ypos = final_y;
-    }
-    if (xpos < final_x) {
-        xpos += speed;
-    }
-    if (xpos > final_x) {
-        xpos -= speed;
-    }
-    if (ypos < final_y) {
-        ypos += speed;
-    }
-    if (ypos > final_y) {
-        ypos -= speed;
-    }
-    elem.style.left = xpos + "px";
-    elem.style.top = ypos + "px";
-    var repeat = "moveElement('" + elementID + "'," + final_x + "," + final_y + "," + interval + ")";
-    // console.log(repeat);
-    setTimeout(repeat, interval);
-}
-
 
 function moveLeft(integer) {
     for (let x = 0; x < 3; x++) {
@@ -326,9 +270,6 @@ function delChild(interval, num) {
             poster1.style.display = "none";
             poster2.style.display = "none";
             poster3.style.display = "none";
-            // posterHref1.removeChild(poster1);
-            // posterHref1.removeChild(poster2);
-            // posterHref1.removeChild(poster3);
             poster1 = poster[0];
             poster2 = poster[1];
             poster3 = poster[2];
