@@ -17,7 +17,6 @@ The purpose of this document is to keep a record of the learning process of uniq
     * [binary tree traversal](./daily_report/Issue%20No.%200/Data_structure/binary%20tree%20traversal.md)
   
 * [Issue No. 1](daily_report/Issue%20No.%201/20_07_08.md)
-  * `null`
 
 
 
@@ -27,6 +26,6 @@ The purpose of this document is to keep a record of the learning process of uniq
 
 :link: [2020 / 07 / 07](daily_report/Issue%20No.%200/20_07_07.md)
 
-:link: [2020 / 07 / 08](daily_report/Issue%20No.%201/20_07_08.md)
+:link: [2020 / 07 / 17](daily_report/Issue%20No.%202/20_07_17.md) event loop事件机制 以及 Promise /A+ 规范（using typescript instead of js）
 
-:link: [2020 / 07 / 09]()
+:link: [2020 / 07 / 18]()
