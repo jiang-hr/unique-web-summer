@@ -15,10 +15,9 @@ The purpose of this document is to keep a record of the learning process of uniq
     * [stack](.\assignment\Issue%20No.%200\stack.hpp)
     * [stack](./assignment/Issue%20No.%200/stack.hpp)
     * [binary tree traversal](./daily_report/Issue%20No.%200/Data_structure/binary%20tree%20traversal.md)
-  
 * [Issue No. 1](daily_report/Issue%20No.%201/20_07_08.md)
-
-
+* Issue No.2 
+  * All the contents about Issue No.2 is in the daily report!
 
 ### Daily report
 
@@ -28,4 +27,4 @@ The purpose of this document is to keep a record of the learning process of uniq
 
 :link: [2020 / 07 / 17](daily_report/Issue%20No.%202/20_07_17.md) event loop事件机制 以及 Promise /A+ 规范（using typescript instead of js）
 
-:link: [2020 / 07 / 18]()
+:link: [2020 / 07 / 18]() 构造 VDOM完成，也即`createElement`函数完成
