@@ -1,21 +1,21 @@
-type ArrayOrElement<T> = T | T[]
+export type ArrayOrElement<T> = T | T[]
 
-interface DOMData {
+export interface DOMData {
     style?: string | undefined;
-    class?: string | undefined;
-    key?: number | undefined;
+    className?: string | undefined;
+    key?: number | string | undefined;
+    id?: string | undefined;
 }
 
-interface DOM {
+export interface DOM {
     tag: string,
     props: DOMData,
     children: Array<ArrayOrElement<DOM> | string> | ArrayOrElement<DOM> | string,
-    key?: string | number | undefined,
 }
 
-type DOMChildren = Array<ArrayOrElement<DOM> | string>;
+export type DOMChildren = Array<ArrayOrElement<DOM> | string>;
 
-function DOM(
+export function DOM(
     tag: string,
     props: DOMData,
     children: DOMChildren | ArrayOrElement<DOM> | string,
@@ -24,17 +24,16 @@ function DOM(
 }
 
 
-function createElement(tag: string, props: DOMData, ...children: DOMChildren): DOM;
-function createElement(tag: string, props: DOMData, n: number): DOM
-function createElement(tag: string, props: DOMData, ...c: any): DOM {
+export function createElement(tag: string, props: DOMData, ...children: DOMChildren): DOM;
+export function createElement(tag: string, props: DOMData, n: number): DOM
+export function createElement(tag: string, props: DOMData, ...c: any): DOM {
     var children: any;
     var n: number;
     var child: DOMChildren = [];
     if (c !== undefined) {
         if (Array.isArray(c)) {
-            if (typeof c[0] === 'number') {
-                n = c[0];
-                props.key = n;
+            if (typeof c[0] === 'number' && c.length === 1) {
+                props.key = c[0];
                 return DOM(tag, props, undefined);
             } else if (typeof c[0] === 'string') {
                 return DOM(tag, props, c[0]);
@@ -63,12 +62,13 @@ function createElement(tag: string, props: DOMData, ...c: any): DOM {
 
 let a = createElement(
     "div",
-    { class: "big" },
-    createElement("span", { class: "big-inner" }, "nihao"),
+    { className: "big" },
+    createElement("span", { className: "big-inner" }, "nihao"),
     [1, 2, 3, 4, 5].map(n =>
-        createElement("span", { class: "big-inner-number", key: n }, n)
+        createElement("span", { className: "big-inner-number", key: n }, n)
     ),
-    createElement("span", { class: "big-inner" }, "shijie")
+    createElement("span", { className: "big-inner" }, "shijie")
 );
 
 console.log(a);
+

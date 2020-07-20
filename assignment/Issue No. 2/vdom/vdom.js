@@ -1,6 +1,10 @@
+"use strict";
+exports.__esModule = true;
+exports.createElement = exports.DOM = void 0;
 function DOM(tag, props, children) {
     return { tag: tag, props: props, children: children };
 }
+exports.DOM = DOM;
 function createElement(tag, props) {
     var c = [];
     for (var _i = 2; _i < arguments.length; _i++) {
@@ -11,9 +15,8 @@ function createElement(tag, props) {
     var child = [];
     if (c !== undefined) {
         if (Array.isArray(c)) {
-            if (typeof c[0] === 'number') {
-                n = c[0];
-                props.key = n;
+            if (typeof c[0] === 'number' && c.length === 1) {
+                props.key = c[0];
                 return DOM(tag, props, undefined);
             }
             else if (typeof c[0] === 'string') {
@@ -42,8 +45,9 @@ function createElement(tag, props) {
     }
     return DOM(tag, props, child);
 }
+exports.createElement = createElement;
 ;
-var a = createElement("div", { "class": "big" }, createElement("span", { "class": "big-inner" }, "nihao"), [1, 2, 3, 4, 5].map(function (n) {
-    return createElement("span", { "class": "big-inner-number", key: n }, n);
-}), createElement("span", { "class": "big-inner" }, "shijie"));
+var a = createElement("div", { className: "big" }, createElement("span", { className: "big-inner" }, "nihao"), [1, 2, 3, 4, 5].map(function (n) {
+    return createElement("span", { className: "big-inner-number", key: n }, n);
+}), createElement("span", { className: "big-inner" }, "shijie"));
 console.log(a);
