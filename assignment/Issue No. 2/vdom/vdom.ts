@@ -1,7 +1,6 @@
 export type ArrayOrElement<T> = T | T[]
 
 export interface DOMData {
-    style?: string | undefined;
     className?: string | undefined;
     key?: number | string | undefined;
     id?: string | undefined;

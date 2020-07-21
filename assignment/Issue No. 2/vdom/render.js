@@ -1,8 +1,7 @@
-import { DOM, createElement } from './vdom'
-
-
-export default function render(vdom: DOM, container: HTMLElement) {
-    let a: HTMLElement = document.createElement(vdom.tag);
+"use strict";
+exports.__esModule = true;
+function render(vdom, container) {
+    var a = document.createElement(vdom.tag);
     if (vdom.props.className) {
         a.className = vdom.props.className;
     }
@@ -13,18 +12,19 @@ export default function render(vdom: DOM, container: HTMLElement) {
         a.append(vdom.children);
     }
     if (Array.isArray(vdom.children)) {
-        for (let x = 0; x < vdom.children.length; x++) {
+        for (var x = 0; x < vdom.children.length; x++) {
             if (typeof vdom.children[x] === 'string') {
-                a.append(vdom.children[x] as string);
-            } else {
-                render(vdom.children[x] as DOM, a);
+                a.append(vdom.children[x]);
+            }
+            else {
+                render(vdom.children[x], a);
             }
         }
     }
     container.appendChild(a);
 }
-
-var c: DOM = {
+exports["default"] = render;
+var c = {
     tag: "div",
     props: {
         id: "v-span",
@@ -36,13 +36,12 @@ var c: DOM = {
         {
             tag: "span",
             props: {
-                id: "v-span",
+                id: "v-span"
             },
             children: [
                 "123"
             ]
         }
     ]
-}
-
+};
 render(c, document.getElementById("example"));
