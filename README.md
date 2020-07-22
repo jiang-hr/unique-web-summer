@@ -27,4 +27,8 @@ The purpose of this document is to keep a record of the learning process of uniq
 
 :link: [2020 / 07 / 17](daily_report/Issue%20No.%202/20_07_17.md) event loop事件机制 以及 Promise /A+ 规范（using typescript instead of js）
 
-:link: [2020 / 07 / 18]() 构造 VDOM完成，也即`createElement`函数完成
+:link: [2020 / 07 / 18](daily_report/Issue%20No.%202/20_07_18.md) 构造 VDOM完成，也即`createElement`函数完成
+
+现在是2020.7.23 凌晨3:32，终于完成了vdom的内容，我的肝啊
+
+:link: [2020 / 07 / 23](daily_report/Issue%20No.%202/20_07_23.md)

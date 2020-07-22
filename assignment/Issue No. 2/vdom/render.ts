@@ -1,7 +1,6 @@
-import { DOM, createElement } from './vdom'
+import { DOM } from './vdom'
 
-
-export default function render(vdom: DOM, container: HTMLElement) {
+export function _render(vdom: DOM): HTMLElement {
     let a: HTMLElement = document.createElement(vdom.tag);
     if (vdom.props.className) {
         a.className = vdom.props.className;
@@ -21,28 +20,11 @@ export default function render(vdom: DOM, container: HTMLElement) {
             }
         }
     }
+    return a;
+}
+
+export default function render(vdom: DOM, container: HTMLElement) {
+    let a: HTMLElement = _render(vdom);
     container.appendChild(a);
 }
 
-var c: DOM = {
-    tag: "div",
-    props: {
-        id: "v-span",
-        className: "demo",
-        key: "xxx"
-    },
-    children: [
-        "你好世界",
-        {
-            tag: "span",
-            props: {
-                id: "v-span",
-            },
-            children: [
-                "123"
-            ]
-        }
-    ]
-}
-
-render(c, document.getElementById("example"));

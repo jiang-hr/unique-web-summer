@@ -2,7 +2,10 @@
 exports.__esModule = true;
 exports.createElement = exports.DOM = void 0;
 function DOM(tag, props, children) {
-    return { tag: tag, props: props, children: children };
+    if (Array.isArray(children))
+        return { tag: tag, props: props, children: children };
+    else
+        return { tag: tag, props: props, children: [children] };
 }
 exports.DOM = DOM;
 function createElement(tag, props) {
@@ -16,8 +19,7 @@ function createElement(tag, props) {
     if (c !== undefined) {
         if (Array.isArray(c)) {
             if (typeof c[0] === 'number' && c.length === 1) {
-                props.key = c[0];
-                return DOM(tag, props, undefined);
+                return DOM(tag, props, c[0].toString());
             }
             else if (typeof c[0] === 'string') {
                 return DOM(tag, props, c[0]);
@@ -47,7 +49,3 @@ function createElement(tag, props) {
 }
 exports.createElement = createElement;
 ;
-var a = createElement("div", { className: "big" }, createElement("span", { className: "big-inner" }, "nihao"), [1, 2, 3, 4, 5].map(function (n) {
-    return createElement("span", { className: "big-inner-number", key: n }, n);
-}), createElement("span", { className: "big-inner" }, "shijie"));
-console.log(a);

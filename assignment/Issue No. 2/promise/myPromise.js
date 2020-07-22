@@ -1,3 +1,5 @@
+"use strict";
+exports.__esModule = true;
 var Status;
 (function (Status) {
     Status[Status["pending"] = 0] = "pending";
@@ -11,8 +13,8 @@ var MyPromise = /** @class */ (function () {
         this.value = null;
         this.reason = null;
         this.status = Status.pending;
-        this.onFulfilledArray = []; //成功回调
-        this.onRejectedArray = []; //失败回调
+        this.onFulfilledArray = [];
+        this.onRejectedArray = [];
         this.fulfill = function (value) {
             if (_this.status === Status.pending) {
                 _this.status = Status.fulfilled;
@@ -143,4 +145,24 @@ var MyPromise = /** @class */ (function () {
     ;
     return MyPromise;
 }());
-module.exports = MyPromise;
+exports["default"] = MyPromise;
+function multiply(input) {
+    return new MyPromise(function (resolve, reject) {
+        console.log('calculating ' + input + ' x ' + input + '...');
+        setTimeout(resolve, 500, input * input);
+    });
+}
+// 0.5秒后返回input+input的计算结果:
+function add(input) {
+    return new MyPromise(function (resolve, reject) {
+        console.log('calculating ' + input + ' + ' + input + '...');
+        setTimeout(resolve, 500, input + input);
+    });
+}
+var p = new MyPromise(function (resolve, reject) {
+    console.log('start new Promise...');
+    resolve(123);
+});
+p.then(multiply).then(add).then(multiply).then(add).then(function (result) {
+    console.log('Got value: ' + result);
+});
