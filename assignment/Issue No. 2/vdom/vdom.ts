@@ -9,21 +9,24 @@ export interface DOMData {
 export interface DOM {
     tag: string,
     props: DOMData,
-    children: Array<ArrayOrElement<DOM> | string> | ArrayOrElement<DOM> | string,
+    children: Array<DOM | string>
 }
 
-export type DOMChildren = Array<ArrayOrElement<DOM> | string>;
+export type DOMChildren = Array<DOM | string>;
 
 export function DOM(
     tag: string,
     props: DOMData,
-    children: DOMChildren | ArrayOrElement<DOM> | string,
+    children: ArrayOrElement<DOM | string>,
 ): DOM {
-    return { tag, props, children }
+    if (Array.isArray(children))
+        return { tag, props, children }
+    else
+        return { tag, props, children: [children] }
 }
 
 
-export function createElement(tag: string, props: DOMData, ...children: DOMChildren): DOM;
+export function createElement(tag: string, props: DOMData, ...children: ArrayOrElement<DOMChildren>): DOM;
 export function createElement(tag: string, props: DOMData, n: number): DOM
 export function createElement(tag: string, props: DOMData, ...c: any): DOM {
     var children: any;
@@ -32,8 +35,7 @@ export function createElement(tag: string, props: DOMData, ...c: any): DOM {
     if (c !== undefined) {
         if (Array.isArray(c)) {
             if (typeof c[0] === 'number' && c.length === 1) {
-                props.key = c[0];
-                return DOM(tag, props, undefined);
+                return DOM(tag, props, c[0].toString());
             } else if (typeof c[0] === 'string') {
                 return DOM(tag, props, c[0]);
             } else {
@@ -44,12 +46,12 @@ export function createElement(tag: string, props: DOMData, ...c: any): DOM {
         }
     }
     if (children !== undefined) {
-        let dfs = (children: DOMChildren) => {
+        let dfs = (children: ArrayOrElement<DOMChildren>) => {
             for (let i: number = 0; i < children.length; ++i) {
                 if (Array.isArray(children[i])) {
                     dfs(children[i] as Array<DOM>);
                 } else {
-                    child.push(children[i]);
+                    child.push(children[i] as DOM | string);
                 }
             }
         }
@@ -57,17 +59,3 @@ export function createElement(tag: string, props: DOMData, ...c: any): DOM {
     }
     return DOM(tag, props, child);
 };
-
-
-let a = createElement(
-    "div",
-    { className: "big" },
-    createElement("span", { className: "big-inner" }, "nihao"),
-    [1, 2, 3, 4, 5].map(n =>
-        createElement("span", { className: "big-inner-number", key: n }, n)
-    ),
-    createElement("span", { className: "big-inner" }, "shijie")
-);
-
-console.log(a);
-

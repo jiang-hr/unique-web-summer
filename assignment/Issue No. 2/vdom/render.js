@@ -1,6 +1,7 @@
 "use strict";
 exports.__esModule = true;
-function render(vdom, container) {
+exports._render = void 0;
+function _render(vdom) {
     var a = document.createElement(vdom.tag);
     if (vdom.props.className) {
         a.className = vdom.props.className;
@@ -21,27 +22,11 @@ function render(vdom, container) {
             }
         }
     }
+    return a;
+}
+exports._render = _render;
+function render(vdom, container) {
+    var a = _render(vdom);
     container.appendChild(a);
 }
 exports["default"] = render;
-var c = {
-    tag: "div",
-    props: {
-        id: "v-span",
-        className: "demo",
-        key: "xxx"
-    },
-    children: [
-        "你好世界",
-        {
-            tag: "span",
-            props: {
-                id: "v-span"
-            },
-            children: [
-                "123"
-            ]
-        }
-    ]
-};
-render(c, document.getElementById("example"));

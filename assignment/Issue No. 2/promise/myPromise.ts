@@ -5,13 +5,13 @@ enum Status {
 }
 
 // myPromise类型
-class MyPromise {
+export default class MyPromise {
     public value: any | null = null;
     public reason: any | null = null;
     public status: Status = Status.pending;
 
-    private onFulfilledArray: Array<Function> = []; //成功回调
-    private onRejectedArray: Array<Function> = []; //失败回调
+    private onFulfilledArray: Array<Function> = [];
+    private onRejectedArray: Array<Function> = [];
 
     public fulfill: Function | undefined = (value: any) => {
         if (this.status === Status.pending) {
@@ -41,7 +41,7 @@ class MyPromise {
         return value;
     }, onRejected: Function = (reason: any) => {
         throw reason;
-    }) {
+    }): MyPromise {
         let myPromise = new MyPromise((fulfill: Function = onFulfilled, reject: Function = onRejected) => {
             if (this.status === Status.fulfilled) {
                 setTimeout(() => {
@@ -87,7 +87,7 @@ class MyPromise {
     };
 
 
-    private resolvePromise: Function = function (myPromise: MyPromise, x: any, fulfill: Function, reject: Function) {
+    private resolvePromise: Function = function (myPromise: MyPromise, x: any, fulfill: Function, reject: Function): void {
         if (myPromise === x) {
             reject(new TypeError('Chaining cycle detected for promise'));
         }
@@ -131,5 +131,28 @@ class MyPromise {
     };
 }
 
-module.exports = MyPromise;
 
+
+function multiply(input) {
+    return new MyPromise(function (resolve, reject) {
+        console.log('calculating ' + input + ' x ' + input + '...');
+        setTimeout(resolve, 500, input * input);
+    });
+}
+
+// 0.5秒后返回input+input的计算结果:
+function add(input) {
+    return new MyPromise(function (resolve, reject) {
+        console.log('calculating ' + input + ' + ' + input + '...');
+        setTimeout(resolve, 500, input + input);
+    });
+}
+
+var p = new MyPromise(function (resolve, reject) {
+    console.log('start new Promise...');
+    resolve(123);
+});
+
+p.then(multiply).then(add).then(multiply).then(add).then(function (result) {
+    console.log('Got value: ' + result);
+});
