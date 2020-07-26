@@ -226,7 +226,7 @@
                 createElement("span", { className: "big-inner-number", key: n }, n)
             ),
             createElement("span", { className: "big-inner" }, "nmsl"),
-            createElement("p", { className: "big-inner" }, "你好")
+            createElement("p", { className: "big-inner" }, "nmslese")
         );
     </script>
 </head>
@@ -236,8 +236,8 @@
     <script>
         render(a, document.getElementById("main"));
         var c = diff(a, b);
+        // patch(document.getElementById("main"), c);
     </script>
-    
 </body>
 
 
